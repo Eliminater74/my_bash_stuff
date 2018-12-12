@@ -2,3 +2,6 @@ source ~/.bash/colors
 source ~/.bash/settings
 source ~/.bash/alias
 source ~/.bash/functions
+source ~/.bash/mysettings
+## To have your terminal prompt display what branch you are currently on ##
+source ~/.bash/prompt

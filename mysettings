@@ -1,0 +1,98 @@
+#############################################
+### MySettings: By Eliminater74           ###
+###                                       ###
+### Date: 04/23/2018:                     ###
+#############################################
+
+
+PATH="/home/eliminater74/perl5/bin${PATH:+:${PATH}}"; export PATH;
+PERL5LIB="/home/eliminater74/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+PERL_LOCAL_LIB_ROOT="/home/eliminater74/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+PERL_MB_OPT="--install_base \"/home/eliminater74/perl5\""; export PERL_MB_OPT;
+PERL_MM_OPT="INSTALL_BASE=/home/eliminater74/perl5"; export PERL_MM_OPT;
+
+#####################################################################
+# 04/21/2018: Updated: By Michael Harrell aka (Eliminater74)        #
+#                                                                   #
+# Below is my Personal Settings and Fixes Dedicated to Arch Linux.  #
+# ----------------------------------------------------------------- #
+#                                                                   #
+#####################################################################
+
+# Then, add the following to your .bashrc/.zshrc
+# Invoke GnuPG-Agent the first time we login.
+# Does `~/.gpg-agent-info' exist and points to gpg-agent process accepting signals?
+if test -f $HOME/.gpg-agent-info && \
+    kill -0 `cut -d: -f 2 $HOME/.gpg-agent-info` 2>/dev/null; then
+    GPG_AGENT_INFO=`cat $HOME/.gpg-agent-info | cut -c 16-`
+else
+    # No, gpg-agent not available; start gpg-agent
+    eval `gpg-agent --daemon --no-grab --allow-preset-passphrase --enable-ssh-support $HOME/.gpg-agent-info`
+fi
+export GPG_TTY=`tty`
+export GPG_AGENT_INFO
+
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion                                                                                                                                                                
+fi
+
+function_exists() {
+    declare -f -F $1 > /dev/null
+    return $?
+}
+
+################################
+### Set Default Personal NFO ###
+################################
+export DEBFULLNAME="Michael Harrell"
+export DEBEMAIL="eliminater74@gmail.com"
+
+
+### CrossTool-NG Home ###
+export CT_NG_HOME=/home/eliminater74/.local/bin
+ 
+## Location SDK Tools ##
+export ANDROID_HOME=~/Android/Sdk/
+export ANDROID_TOOLS=~/Android/Sdk/tools/
+export ANDROID_BUILD_TOOLS=~/Android/Sdk/build-tools/28.0.3/
+export ANDROID_PLATFORM_TOOLS=~/Android/Sdk/platform-tools/
+export ANDROID_NDK_HOME=~/Android/Sdk/ndk-bundle/
+export ANDROID_PLATFORM_TOOLS_BIN=~/Android/Sdk/tools/bin/
+export ANDROID_LLDB=~/Android/Sdk/lldb/3.0/bin/
+export ANDROID_CMAKE=~/Android/Sdk/cmake/3.6.4111459/bin/
+export ANDROID_CLANG=~/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/
+#export ANDROID_CLANG=~/Android/clang/build/bin/
+export GIT_CLONEORG=~/bin/cloneorg/bin
+export DISARM=~/bin/disarm
+
+
+### Make Colors for Building-Compiling ###
+export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
+
+# ccache setups among some other stuff
+export CCACHE_DIR=$HOME/Builds/.ccache
+export PATH="/usr/lib/ccache:$PATH"
+export USE_CCACHE=1
+
+export USE_PREBUILT_CHROMIUM=1
+export EXPERIMENTAL_USE_JAVA8=true
+export USE_NINJA=true
+
+
+################ JACK SERVER ##############################
+#export ANDROID_JACK_VM_ARGS="-Xmx4096m -Dfile.encoding=UTF-8 -XX:+TieredCompilation"
+export ANDROID_JACK_VM_ARGS="-Xmx8g -Dfile.encoding=UTF-8 -XX:+TieredCompilation"
+
+export PATH="$PATH:/home/eliminater74/Android/depot_tools"
+
+alias git-pl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
+
+export USE_CCACHE=1
+export LC_ALL=C
+
+eval "$(hub alias -s)"
+
+### KEEP PATH AT BOTTOM ###
+#PATH=$PATH:$ANDROID_HOME:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS:$ANDROID_BUILD_TOOLS:$ANDROID_NDK_HOME:$ANDROID_PLATFORM_TOOLS_BIN:$ANDROID_LLDB:$ANDROID_CMAKE:$ANDROID_CLANG:$GIT_CLONEORG:$DISARM:$CT_NG_HOME
+
+PATH=$PATH:$ANDROID_HOME:$GIT_CLONEORG:$DISARM:$CT_NG_HOME
