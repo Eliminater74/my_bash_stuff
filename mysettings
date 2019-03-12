@@ -65,6 +65,8 @@ export ANDROID_CLANG=~/Android/Sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86
 export GIT_CLONEORG=~/bin/cloneorg/bin
 export DISARM=~/bin/disarm
 
+export GIT_TOOLS=~/bin/git-tools
+
 
 ### Make Colors for Building-Compiling ###
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
@@ -95,4 +97,4 @@ eval "$(hub alias -s)"
 ### KEEP PATH AT BOTTOM ###
 #PATH=$PATH:$ANDROID_HOME:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS:$ANDROID_BUILD_TOOLS:$ANDROID_NDK_HOME:$ANDROID_PLATFORM_TOOLS_BIN:$ANDROID_LLDB:$ANDROID_CMAKE:$ANDROID_CLANG:$GIT_CLONEORG:$DISARM:$CT_NG_HOME
 
-PATH=$PATH:$ANDROID_HOME:$GIT_CLONEORG:$DISARM:$CT_NG_HOME
+PATH=$PATH:$ANDROID_HOME:$GIT_CLONEORG:$DISARM:$CT_NG_HOME:$GIT_TOOLS

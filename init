@@ -4,4 +4,7 @@ source ~/.bash/alias
 source ~/.bash/functions
 source ~/.bash/mysettings
 ## To have your terminal prompt display what branch you are currently on ##
-source ~/.bash/prompt
+# source ~/.bash/prompt
+GIT_PROMPT_ONLY_IN_REPO=1
+GIT_PROMPT_THEME=Solarized_Extravagant
+source ~/.bash/bash-git-prompt/gitprompt.sh
