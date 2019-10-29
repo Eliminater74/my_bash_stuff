@@ -5,14 +5,14 @@
 #############################################
 
 
-PATH="/home/eliminater74/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/eliminater74/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/eliminater74/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/eliminater74/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/eliminater74/perl5"; export PERL_MM_OPT;
+#PATH="/home/eliminater74/perl5/bin${PATH:+:${PATH}}"; export PATH;
+#PERL5LIB="/home/eliminater74/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+#PERL_LOCAL_LIB_ROOT="/home/eliminater74/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+#PERL_MB_OPT="--install_base \"/home/eliminater74/perl5\""; export PERL_MB_OPT;
+#PERL_MM_OPT="INSTALL_BASE=/home/eliminater74/perl5"; export PERL_MM_OPT;
 
 #####################################################################
-# 04/21/2018: Updated: By Michael Harrell aka (Eliminater74)        #
+# 10/29/2019: Updated: By Michael Harrell aka (Eliminater74)        #
 #                                                                   #
 # Below is my Personal Settings and Fixes Dedicated to Arch Linux.  #
 # ----------------------------------------------------------------- #
@@ -54,13 +54,13 @@ export CT_NG_HOME=/home/eliminater74/.local/bin
 ## Location SDK Tools ##
 export ANDROID_HOME=/opt/android-sdk/
 export ANDROID_TOOLS=/opt/android-sdk/tools/
-export ANDROID_BUILD_TOOLS=/opt/android-sdk/build-tools/27.0.3/
-export ANDROID_PLATFORM_TOOLS=/opt/android-sdk/platform-tools/
+export ANDROID_BUILD_TOOLS=/opt/android-sdk/build-tools/29.0.2/
 export ANDROID_NDK_HOME=/opt/android-ndk/
-export ANDROID_PLATFORM_TOOLS_BIN=/opt/android-sdk/tools/bin/
-export ANDROID_LLDB=/opt/android-sdk/lldb/3.0/bin/
-export ANDROID_CMAKE=/opt/android-sdk/cmake/3.6.4111459/bin/
-export ANDROID_CLANG=/opt/android-sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/
+#export ANDROID_PLATFORM_TOOLS=/opt/android-sdk/platform-tools/
+#export ANDROID_PLATFORM_TOOLS_BIN=/opt/android-sdk/tools/bin/
+#export ANDROID_LLDB=/opt/android-sdk/lldb/3.0/bin/
+#export ANDROID_CMAKE=/opt/android-sdk/cmake/3.6.4111459/bin/
+#export ANDROID_CLANG=/opt/android-sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/
 #export ANDROID_CLANG=~/Android/clang/build/bin/
 export GIT_CLONEORG=~/bin/cloneorg/bin
 export DISARM=~/bin/disarm
@@ -97,4 +97,6 @@ eval "$(hub alias -s)"
 ### KEEP PATH AT BOTTOM ###
 #PATH=$PATH:$ANDROID_HOME:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS:$ANDROID_BUILD_TOOLS:$ANDROID_NDK_HOME:$ANDROID_PLATFORM_TOOLS_BIN:$ANDROID_LLDB:$ANDROID_CMAKE:$ANDROID_CLANG:$GIT_CLONEORG:$DISARM:$CT_NG_HOME
 
-PATH=$PATH:$ANDROID_HOME:$ANDROID_TOOLS:$ANDROID_BUILD_TOOLS:$ANDROID_PLATFORM_TOOLS:$ANDROID_PLATFORM_TOOLS_BIN:$ANDROID_NDK_HOME:$GIT_CLONEORG:$DISARM:$CT_NG_HOME:$GIT_TOOLS
+PATH=$PATH:$ANDROID_HOME:$ANDROID_TOOLS:$ANDROID_BUILD_TOOLS:$ANDROID_NDK_HOME:$GIT_CLONEORG:$DISARM:$CT_NG_HOME:$GIT_TOOLS
+
+#PATH=$PATH:$ANDROID_HOME:$ANDROID_TOOLS:$ANDROID_BUILD_TOOLS:$ANDROID_PLATFORM_TOOLS:$ANDROID_PLATFORM_TOOLS_BIN:$ANDROID_NDK_HOME:$GIT_CLONEORG:$DISARM:$CT_NG_HOME:$GIT_TOOLS
