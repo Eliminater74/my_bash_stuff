@@ -51,17 +51,39 @@ export DEBEMAIL="eliminater74@gmail.com"
 ### CrossTool-NG Home ###
 export CT_NG_HOME=/home/eliminater74/.local/bin
  
-## Location SDK Tools ##
-export ANDROID_HOME=/opt/android-sdk/
-#export ANDROID_TOOLS=/opt/android-sdk/tools/
-export ANDROID_BUILD_TOOLS=/opt/android-sdk/build-tools/29.0.3/
-export ANDROID_NDK_HOME=/opt/android-ndk/
-#export ANDROID_PLATFORM_TOOLS=/opt/android-sdk/platform-tools/
-#export ANDROID_PLATFORM_TOOLS_BIN=/opt/android-sdk/tools/bin/
-#export ANDROID_LLDB=/opt/android-sdk/lldb/3.0/bin/
-#export ANDROID_CMAKE=/opt/android-sdk/cmake/3.6.4111459/bin/
-#export ANDROID_CLANG=/opt/android-sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/
-#export ANDROID_CLANG=~/Android/clang/build/bin/
+ 
+######################################################################################################################################
+#### Arch: /home/eliminater74/Android/Android-Studio/SDK/
+#### Location SDK Tools ##
+export ANDROID_HOME=/home/eliminater74/Android/Android-Studio/SDK/
+export ANDROID_TOOLS=/home/eliminater74/Android/Android-Studio/SDK/tools/
+export ANDROID_BUILD_TOOLS=/home/eliminater74/Android/Android-Studio/SDK/build-tools/29.0.3/
+export ANDROID_NDK_HOME=/home/eliminater74/Android/Android-Studio/SDK/ndk/21.1.6210238/
+
+##### <--- Comented out for /opt
+export ANDROID_PLATFORM_TOOLS=/home/eliminater74/Android/Android-Studio/SDK/platform-tools/
+export ANDROID_PLATFORM_TOOLS_BIN=/home/eliminater74/Android/Android-Studio/SDK/tools/bin/
+export ANDROID_LLDB=/home/eliminater74/Android/Android-Studio/SDK/lldb/3.1/bin/
+export ANDROID_CMAKE=/home/eliminater74/Android/Android-Studio/SDK/cmake/3.10.2.4988404/bin/
+export ANDROID_CLANG=/home/eliminater74/Android/Android-Studio/SDK/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/
+export ANDROID_CLANG=/home/eliminater74/Android/clang/build/bin/
+
+##############################################################################################
+#### Arch: /OPT
+#### Location SDK Tools ##
+#export ANDROID_HOME=/opt/android-sdk/
+##export ANDROID_TOOLS=/opt/android-sdk/tools/
+#export ANDROID_BUILD_TOOLS=/opt/android-sdk/build-tools/29.0.3/
+#export ANDROID_NDK_HOME=/opt/android-ndk/
+
+
+##export ANDROID_PLATFORM_TOOLS=/opt/android-sdk/platform-tools/
+##export ANDROID_PLATFORM_TOOLS_BIN=/opt/android-sdk/tools/bin/
+##export ANDROID_LLDB=/opt/android-sdk/lldb/3.0/bin/
+##export ANDROID_CMAKE=/opt/android-sdk/cmake/3.6.4111459/bin/
+##export ANDROID_CLANG=/opt/android-sdk/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/
+##export ANDROID_CLANG=~/Android/clang/build/bin/
+###############################################################################################
 export GIT_CLONEORG=~/bin/cloneorg/bin
 export DISARM=~/bin/disarm
 
