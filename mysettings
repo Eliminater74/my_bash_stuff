@@ -50,23 +50,30 @@ export DEBEMAIL="eliminater74@gmail.com"
 
 ### CrossTool-NG Home ###
 export CT_NG_HOME=/home/eliminater74/.local/bin
- 
- 
+
+export openWRT=/home/eliminater74/bin/openwrt 
+
 ######################################################################################################################################
+
+export ANDROID_SDK_PLATFORM_TOOLS=/opt/android-sdk/platform-tools/
+export ANDROID_SDK_BUILD_TOOLS=/opt/android-sdk/build-tools/30.0.2/
+
+
+
 #### Arch: /home/eliminater74/Android/Android-Studio/SDK/
 #### Location SDK Tools ##
-export ANDROID_HOME=/home/eliminater74/Android/Android-Studio/SDK/
-export ANDROID_TOOLS=/home/eliminater74/Android/Android-Studio/SDK/tools/
-export ANDROID_BUILD_TOOLS=/home/eliminater74/Android/Android-Studio/SDK/build-tools/29.0.3/
-export ANDROID_NDK_HOME=/home/eliminater74/Android/Android-Studio/SDK/ndk/21.1.6210238/
+#export ANDROID_HOME=/home/eliminater74/Android/Android-Studio/SDK/
+#export ANDROID_TOOLS=/home/eliminater74/Android/Android-Studio/SDK/tools/
+#export ANDROID_BUILD_TOOLS=/home/eliminater74/Android/Android-Studio/SDK/build-tools/30.0.0-rc1/
+#export ANDROID_NDK_HOME=/home/eliminater74/Android/Android-Studio/SDK/ndk/21.1.6210238/
 
 ##### <--- Comented out for /opt
-export ANDROID_PLATFORM_TOOLS=/home/eliminater74/Android/Android-Studio/SDK/platform-tools/
-export ANDROID_PLATFORM_TOOLS_BIN=/home/eliminater74/Android/Android-Studio/SDK/tools/bin/
-export ANDROID_LLDB=/home/eliminater74/Android/Android-Studio/SDK/lldb/3.1/bin/
-export ANDROID_CMAKE=/home/eliminater74/Android/Android-Studio/SDK/cmake/3.10.2.4988404/bin/
-export ANDROID_CLANG=/home/eliminater74/Android/Android-Studio/SDK/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/
-export ANDROID_CLANG=/home/eliminater74/Android/clang/build/bin/
+#export ANDROID_PLATFORM_TOOLS=/home/eliminater74/Android/Android-Studio/SDK/platform-tools/
+#export ANDROID_PLATFORM_TOOLS_BIN=/home/eliminater74/Android/Android-Studio/SDK/tools/bin/
+#export ANDROID_LLDB=/home/eliminater74/Android/Android-Studio/SDK/lldb/3.1/bin/
+#export ANDROID_CMAKE=/home/eliminater74/Android/Android-Studio/SDK/cmake/3.10.2.4988404/bin/
+#export ANDROID_CLANG=/home/eliminater74/Android/Android-Studio/SDK/ndk-bundle/toolchains/llvm/prebuilt/linux-x86_64/bin/
+#export ANDROID_CLANG=/home/eliminater74/Android/clang/build/bin/
 
 ##############################################################################################
 #### Arch: /OPT
@@ -107,8 +114,6 @@ export USE_NINJA=true
 #export ANDROID_JACK_VM_ARGS="-Xmx4096m -Dfile.encoding=UTF-8 -XX:+TieredCompilation"
 export ANDROID_JACK_VM_ARGS="-Xmx8g -Dfile.encoding=UTF-8 -XX:+TieredCompilation"
 
-export PATH="$PATH:/home/eliminater74/Android/depot_tools"
-
 alias git-pl="git log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit"
 
 export USE_CCACHE=1
@@ -117,8 +122,46 @@ export LC_ALL=C
 eval "$(hub alias -s)"
 
 ### KEEP PATH AT BOTTOM ###
-#PATH=$PATH:$ANDROID_HOME:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS:$ANDROID_BUILD_TOOLS:$ANDROID_NDK_HOME:$ANDROID_PLATFORM_TOOLS_BIN:$ANDROID_LLDB:$ANDROID_CMAKE:$ANDROID_CLANG:$GIT_CLONEORG:$DISARM:$CT_NG_HOME
 
-PATH=$PATH:$ANDROID_HOME:$ANDROID_TOOLS:$ANDROID_BUILD_TOOLS:$ANDROID_NDK_HOME:$GIT_CLONEORG:$DISARM:$CT_NG_HOME:$GIT_TOOLS
+## ACTIVE PATHS ##
+# PATH=$PATH:$ANDROID_HOME:$ANDROID_TOOLS:$ANDROID_BUILD_TOOLS:$ANDROID_NDK_HOME:$GIT_CLONEORG:$DISARM:$CT_NG_HOME:$GIT_TOOLS:$openWRT
+
+##########################################################################################################################################
+########################################## DONT CHANGE BASH COMMANDS #####################################################################
+######################
+#### ADDING PATHS #### Updated: 11/11/2020
+######################
+
+# Append "$1" to $PATH when not already in.
+# This function API is accessible to scripts in /etc/profile.d
+append_path () {
+    case ":$PATH:" in
+        *:"$1":*)
+            ;;
+        *)
+            PATH="${PATH:+$PATH:}$1"
+    esac
+}
+###################################################################################################
+
+# Append our default paths
+append_path $ANDROID_HOME
+append_path $ANDROID_SDK_PLATFORM_TOOLS
+append_path $ANDROID_BUILD_TOOLS
+append_path $ANDROID_NDK_HOME
+append_path $GIT_CLONEORG
+append_path $DISARM
+append_path $CT_NG_HOME
+append_path $GIT_TOOLS
+# append_path $ANDROID_TOOLS # <-- Used for android Studio Home Section
+# append_path $ANDROID_BUILD_TOOLS # <-- Used for android Studio Home Section
+# append_path
+# append_path 
+# Force PATH to be environment
+export PATH
+
+#######################################################################################################################################
+#### DISABLED PATHS ###
+#PATH=$PATH:$ANDROID_HOME:$ANDROID_TOOLS:$ANDROID_PLATFORM_TOOLS:$ANDROID_BUILD_TOOLS:$ANDROID_NDK_HOME:$ANDROID_PLATFORM_TOOLS_BIN:$ANDROID_LLDB:$ANDROID_CMAKE:$ANDROID_CLANG:$GIT_CLONEORG:$DISARM:$CT_NG_HOME
 
 #PATH=$PATH:$ANDROID_HOME:$ANDROID_TOOLS:$ANDROID_BUILD_TOOLS:$ANDROID_PLATFORM_TOOLS:$ANDROID_PLATFORM_TOOLS_BIN:$ANDROID_NDK_HOME:$GIT_CLONEORG:$DISARM:$CT_NG_HOME:$GIT_TOOLS
